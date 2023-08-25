@@ -3,8 +3,9 @@ import {Header} from "./";
 
 const Layout = ({children}) => {
   return (
-    <div>
+    <div className='w-full'>
         <Header/>
+        <hr></hr>
         {children}
     </div>
   )
