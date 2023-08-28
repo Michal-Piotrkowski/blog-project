@@ -48,7 +48,7 @@ const PostCard = ({post, index}) => {
   useEffect(() => {
     Countable.count(myContainer.current?.innerText, count => {
       if(count.words >= 200){
-        counterShow.current.innerText = count.words/200 + " min"
+        counterShow.current.innerText = Math.round(count.words/200) + " min"
       }
       else{
         counterShow.current.innerText = " < 1 min"
@@ -57,15 +57,15 @@ const PostCard = ({post, index}) => {
   })
 
   return (
-    <div className='relative flex flex-row grid-cols-3 mb-10 rounded-3xl bg-black'>
-        <div className="absolute w-3/4 h-32 lg:h-72 rounded-3xl opacity-80" style={{backgroundImage: `url(${post.featuredImage.url})`}}></div>
+    <div className='relative flex flex-row grid-cols-3 h-auto mb-10 rounded-3xl bg-black'>
+        <div className="absolute w-3/4 h-32 lg:h-full rounded-3xl opacity-80 bg-center bg-cover" style={{backgroundImage: `url(${post.featuredImage.url})`}}></div>
         <div className="relative w-3/4 h-32 lg:h-72 rounded-3xl">
             <div className='flex justify-left ml-10 mt-5 flex-row col-span-3'><span className='text-2xl font-bold text-white z-2'>{post.title}</span></div>
             <div className='w-20 absolute top-3 right-5 rounded-full '><img className="border-white border-2 rounded-full" src="/ja.jpg" alt="zdjecie autora"/></div>
             <div className='grid grid-cols-2 items-center justify-items-center absolute bottom-3 left-5 flex flex-row'>
               <img className='w-10' src="/clock.svg" alt="calendar-icon"/>
               <span className='hidden' id="counter" ref={myContainer}>{
-                post.author.posts[index].content.raw.children.map((typeObj, index) => {
+                post.author.posts.reverse()[index].content.raw.children.map((typeObj, index) => {
                   const children = typeObj.children.map((item, itemindex) => getContentFragment(itemindex, item.text, item));
                   return getContentFragment(index, children, typeObj, typeObj.type);
                 })
