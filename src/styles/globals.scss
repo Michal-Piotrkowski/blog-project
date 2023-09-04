@@ -4,6 +4,10 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap');
 
+.side-panel-icon {
+  @apply lg:w-12 lg:h-12;
+}
+
 html,
 body {
   padding: 0;

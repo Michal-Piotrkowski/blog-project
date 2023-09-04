@@ -1,4 +1,5 @@
 import React from 'react';
+import { getPostsByCategories } from '../../../services';
 const PostDetails = () => {
   return (
     <div className='container mx-auto px-10 mb-8'>
@@ -11,3 +12,8 @@ const PostDetails = () => {
   );
 };
 export default PostDetails;
+
+// export async function getStaticProps(){
+//   const posts = await getPostsByCategories() || [];
+//   return {props: {posts}};
+// }

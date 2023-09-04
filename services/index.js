@@ -98,7 +98,6 @@ export const getRecentPosts = async () => {
     `
 
     const result = await request(graphqlAPI, query);
-
     return result.posts;
 }
 
@@ -116,6 +115,67 @@ export const getPopularPosts = async () => {
     }
   `
   const result = await request(graphqlAPI, query);
-
   return result.posts;
 }
+
+export const getPostDetails = async (slug) => {
+    const query = gql`
+    query MyQuery($slug: String!) {
+      post(where: {slug: $slug}) {
+        title
+        excerpt
+        featuredImage {
+          url
+        }
+        createdAt
+        slug
+        content {
+          raw
+        }
+        categories {
+          name
+          slug
+        }
+      }
+    }
+  `
+  const result = await request(graphqlAPI, query, { slug });
+
+  return result.post;
+}
+
+export const getPostsByCategories = async () => {
+  const query = gql`
+    query MyQuery($category: String!) {
+      postsConnection(where: {categories_some: {slug: $category}}) {
+        edges {
+          node {
+            author {
+              bio
+              name
+              id
+              photo {
+                url
+              }
+            }
+            createdAt
+            slug
+            title
+            excerpt
+            featuredImage {
+              url
+            }
+            categories {
+              name
+              slug
+            }
+          }
+        }
+      }
+    }
+  `;
+
+  const result = await request(graphqlAPI, query);
+
+  return result.postsConnection.edges;
+};
