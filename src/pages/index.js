@@ -17,9 +17,7 @@ export default function Home({posts}) {
       <div className="relative grid grid-cols-8">
           <div className="relative h-full col-span-5">
               {posts.reverse().map((post, index) => (
-                <div>
-                  <PostCard post={post.node} key={index} index={index} />
-                </div>
+                <PostCard post={post.node} key={index} index={index} />
               ) )}
           </div>
           <div className='col-span-1'></div>

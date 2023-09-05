@@ -136,6 +136,13 @@ export const getPostDetails = async (slug) => {
           name
           slug
         }
+        author {
+          bio
+          name
+          photo {
+            url
+          }
+        }
       }
     }
   `
@@ -144,11 +151,12 @@ export const getPostDetails = async (slug) => {
   return result.post;
 }
 
-export const getPostsByCategories = async () => {
+export const getPostsByCategories = async (slug) => {
   const query = gql`
-    query MyQuery($category: String!) {
-      postsConnection(where: {categories_some: {slug: $category}}) {
+    query GetPostsbyCategories($slug: String!) {
+      postsConnection(where: {categories_some: {slug: $slug}}) {
         edges {
+          cursor
           node {
             author {
               bio
@@ -156,6 +164,11 @@ export const getPostsByCategories = async () => {
               id
               photo {
                 url
+              }
+              posts {
+                content {
+                  raw
+                }
               }
             }
             createdAt
@@ -175,7 +188,7 @@ export const getPostsByCategories = async () => {
     }
   `;
 
-  const result = await request(graphqlAPI, query);
+  const result = await request(graphqlAPI, query, { slug });
 
   return result.postsConnection.edges;
 };

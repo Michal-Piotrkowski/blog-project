@@ -32,7 +32,7 @@ const Footer = () => {
         <section className=''>
             <div className="py-8 lg:py-16 px-4 mx-auto max-w-screen-md block">
                 <h3 className='text-4xl tracking-tight font-extrabold text-center text-gray-900'>Więcej o mnie:</h3>
-                <Link href="https://www.instagram.com/michal_piotrkowski/?utm_source=qr&igshid=MzNlNGNkZWQ4Mg%3D%3D">
+                <Link href="https://github.com/Michal-Piotrkowski">
                     <div className='flex flex-col'>
                         <p className="my-5 font-light text-center text-gray-500 sm:text-xl">Oprócz podróży aktywnie rozwijam się w dziedzinie programowania, zobacz i śledź moje poczynania w tym zakresie!</p>
                         <img className='w-12 h-12 mx-auto' src="/github.png" alt="github icon"/> 
