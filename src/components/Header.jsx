@@ -5,6 +5,7 @@ import { getCategories } from '../../services';
 const Header = () => {
   const [categories, setCategories] = useState([]);
   const [selected, setSelected] = useState([]);
+  const [inSearchMode, setInSearchMode] = useState([]);
   useEffect(() => {
     getCategories()
       .then((newCategories) => setCategories(newCategories));
@@ -12,7 +13,7 @@ const Header = () => {
 
   return (
     <div className="grid grid-cols-12">
-      <Link className="text-center col-span-4" href={`/`}  onClick={(e)=> {
+      <Link className="text-center col-span-3" href={`/`}  onClick={(e)=> {
         if(selected){
           selected.backgroundColor = ""
           selected.color = ""
@@ -26,6 +27,11 @@ const Header = () => {
             </span>
         </div>
       </Link>
+      <div className='flex flex-row items-center justify-center col-span-1' onClick={(() => {
+        setInSearchMode(true)
+      })}>
+        <img className="w-10 mr-3" src='/search.svg' alt="search"/>
+      </div>
         <div className="grid grid-cols-4 col-span-8">
             {categories.map((category) => (
                 <Link className="col-span-1" key={category.slug} href={`/category/${category.slug}`} onClick={(e)=>
