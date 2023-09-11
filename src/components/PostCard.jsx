@@ -82,7 +82,7 @@ const PostCard = ({post, index}) => {
           <hr className='w-3/4 mx-auto h-px mt-8 mb-5 bg-gray-200 border-0 dark:bg-gray-700'></hr>
           <div className="text-center">
             <Link href={`/post/${post.slug}`}>
-              <span className="transition duration-500 transform hover:-translate-y-1 inline-block bg-pink-700 text-2xl font-semibold rounded-full text-white px-8 py-3 cursor-pointer">
+              <span className="transition duration-500 transform hover:-translate-y-1 inline-block bg-pink-700 text-2xl font-semibold rounded-xl text-white px-8 py-3 cursor-pointer">
                 Zobacz więcej
               </span>
             </Link>

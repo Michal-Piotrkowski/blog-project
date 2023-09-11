@@ -3,4 +3,7 @@ export {default as PostCard} from "./PostCard";
 export {default as PostWidget} from "./PostWidget";
 export {default as Layout} from "./Layout";
 export {default as Footer} from "./Footer";
+export {default as FooterForm} from "./FooterForm";
 export {default as SidePanel} from "./SidePanel";
+export {default as Input} from "./Input";
+export {default as InfoWidget} from "./InfoWidget";

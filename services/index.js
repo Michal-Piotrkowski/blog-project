@@ -192,3 +192,24 @@ export const getPostsByCategories = async (slug) => {
 
   return result.postsConnection.edges;
 };
+
+export const getInputResults = async (string) => {
+  const query = gql`
+  query MyQuery($string: String!) {
+    postsConnection(where: {_search: $string}) {
+      edges {
+        node {
+          slug
+          title
+          featuredImage {
+            url
+          }
+        }
+      }
+    }
+  }
+  `;
+
+  const result = await request(graphqlAPI, query, { string });
+  return result.postsConnection.edges;
+};
