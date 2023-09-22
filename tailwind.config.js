@@ -17,10 +17,30 @@ module.exports = {
           700: '#23255D',
         },
         pink: {
-          700: '#F2546B',
+          700: '#BF4C6F',
+        },
+        orange: {
+          700: '#F07A62',
+          500: '#FFB659',
         }
       }
     },
+    screens: {
+      'sm': '640px',
+      // => @media (min-width: 640px) { ... }
+
+      'md': '768px',
+      // => @media (min-width: 768px) { ... }
+
+      'lg': '1024px',
+      // => @media (min-width: 1024px) { ... }
+
+      'xl': '1351px',
+      // => @media (min-width: 1280px) { ... }
+
+      '2xl': '1536px',
+      // => @media (min-width: 1536px) { ... }
+    }
   },
   plugins: [],
 }

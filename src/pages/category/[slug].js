@@ -9,8 +9,8 @@ const PostsByCategory = ({ posts }) => {
     return (<h1>"Loading..."</h1>);
   }
   return (
-    <main className="w-full md:w-auto px-10 my-8 bg-white">
-      <div className="relative grid grid-cols-8">
+    <main className="w-full 2xl:px-10 xl:px-8 2xl:my-8 xl:my-6 bg-white">
+      <div className="h-full relative grid grid-cols-8">
           <div className="relative h-full col-span-5">
               {posts.reverse().map((post, index) => (
                 <PostCard post={post.node} key={index} index={index} />
@@ -18,7 +18,7 @@ const PostsByCategory = ({ posts }) => {
           </div>
           <div className='col-span-1'></div>
           <SidePanel />
-          <div className='absolute left-96 -top-4 w-72 h-auto bg-blue-700 rounded-3xl text-center'><span className='text-white font-bold text-3xl'>NAJNOWSZE</span></div>
+          <div className='absolute 2xl:w-72 2xl:left-72 2xl:-top-4 xl:w-64 xl:left-64 xl:-top-4 h-auto bg-blue-700 rounded-3xl text-center'><span className='text-white font-bold 2xl:text-3xl xl:text-2xl'>NAJNOWSZE</span></div>
       </div>
     </main>
   );

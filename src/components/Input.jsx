@@ -41,18 +41,18 @@ const Input = () => {
     }
 
     return (
-        <div className='col-span-4'>
-            <form className='w-full h-full flex flex-row justify-left items-center col-span-4 gap-x-5'>
+        <div className='2xl:col-span-4 xl:col-span-4 lg:col-span-6'>
+            <form className='w-full h-full flex flex-row justify-left items-center col-span-4 2xl:gap-x-5 xl:gap-x-4 lg:gap-x-4'>
                 <input 
                     name="search"
-                    className='w-3/4 h-3/4 p-5 border-none focus:outline-none bg-gray-200 text-gray-400 text-xl rounded-xl' 
+                    className='w-3/4 h-3/4 2xl:p-5 xl:p-4 lg:p-4 border-none focus:outline-none bg-gray-200 text-gray-400 2xl:text-xl xl:text-base lg:text-xl rounded-xl' 
                     label="Search" 
                     radius="lg" 
                     placeholder="Szukaj wpisu..." 
                     autoFocus
                     onChange={(e) => onChange(e)}
                 />
-                <svg className='fill-gray-400 w-8 h-8' xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"/></svg>
+                <svg className='fill-gray-400 2xl:w-8 xl:w-8 lg:w-10 2xl:h-8 xl:h-8 lg:h-10' xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"/></svg>
             </form>
             <div className='absolute flex flex-col'>
                 {results()}

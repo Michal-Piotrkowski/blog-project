@@ -5,7 +5,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap');
 
 .side-panel-icon {
-  @apply lg:w-12 lg:h-12;
+  @apply 2xl:w-12 2xl:h-12 xl:w-10 xl:h-10 lg:w-12 lg:h-12 hover:animate-spin;
+}
+
+.scrolls-excerpt {
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}
+
+.scrolls-excerpt::-webkit-scrollbar {
+  display: none;
+}
+
+.activeMobileNav{
+  @apply grid grid-cols-2;
+}
+
+.hiddenMobileNav{
+  @apply grid grid-cols-12;
 }
 
 html,

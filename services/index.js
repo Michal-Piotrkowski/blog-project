@@ -111,6 +111,7 @@ export const getPopularPosts = async () => {
         featuredImage {
           url
         }
+        slug
       }
     }
   `

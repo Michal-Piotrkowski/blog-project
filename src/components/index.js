@@ -7,3 +7,7 @@ export {default as FooterForm} from "./FooterForm";
 export {default as SidePanel} from "./SidePanel";
 export {default as Input} from "./Input";
 export {default as InfoWidget} from "./InfoWidget";
+export {default as NavMobile} from "./NavMobile";
+export {default as NavDesktop} from "./NavDesktop";
+export {default as FooterMobile} from "./FooterMobile";
+export {default as FooterDesktop} from "./FooterDesktop";
