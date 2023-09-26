@@ -48,22 +48,22 @@ const PostDetails = ({ post }) => {
   };
 
   return (
-    <div className='relative mx-auto 2xl:px-10 xl:px-8 2xl:mb-8 xl:mb-6'>
-      <div className='relative flex flex-col items-center 2xl:gap-12 xl:gap-10 2xl:my-16 xl:my-14'>
-        <div className='realtive w-full 2xl:h-96 xl:h-72 flex justify-center bg-black'>
+    <div className='relative mx-auto 2xl:px-10 xl:px-8 lg:px-10 md:px-8 2xl:mb-8 xl:mb-6 lg:mb-8 md:mb-6 '>
+      <div className='relative flex flex-col items-center 2xl:gap-12 xl:gap-10 lg:gap-12 md:gap-10 2xl:my-16 xl:my-14 lg:my-10 md:my-8'>
+        <div className='realtive w-full 2xl:h-96 xl:h-72 lg:h-96 md:h-72 flex justify-center bg-black'>
           <div className="w-full opacity-80 bg-center bg-cover bg-no-repeat" style={{backgroundImage: `url(${post.featuredImage.url})`}}></div>
-          <div className='2xl:h-20 xl:h-16 absolute 2xl:p-5 xl:p-4 bg-blue-700 top-0'>
-            <h1 className='2xl:text-4xl xl:text-3xl tracking-tight font-extrabold text-center text-gray-200'>{post.title}</h1>
+          <div className='2xl:h-20 xl:h-16 lg:h-20 md:h-16 absolute 2xl:p-5 xl:p-4 lg:p-5 md:p-4 bg-blue-700 top-0'>
+            <h1 className='2xl:text-4xl xl:text-3xl lg:text-3xl md:text-2xl tracking-tight font-extrabold text-center text-gray-200'>{post.title}</h1>
           </div>
-          <div className='2xl:w-20 xl:w-20 absolute 2xl:top-3 xl:top-2 2xl:right-5 xl:right-4 rounded-full '><img className="border-white border-2 rounded-full" src={post.author.photo.url} alt="zdjecie autora"/></div>
+          <div className='2xl:w-20 xl:w-20 lg:w-20 md:w-20 absolute 2xl:top-3 xl:top-2 lg:top-3 md:top-2 2xl:right-5 xl:right-4 lg:right-5 md:right-4 rounded-full '><img className="border-white border-2 rounded-full" src={post.author.photo.url} alt="zdjecie autora"/></div>
         </div>
-        <div className='w-1/2'>
-          <div className='flex flex-row 2xl:space-x-2 xl:space-x-2 items-center'>
-            <img className='2xl:w-6 xl:w-6 justify-self-end bg-black' src="/calendar.svg" alt="calendar-icon"/>
-            <span className="text-gray-500 font-medium 2xl:text-base xl:text-sm">{moment(post.createdAt).format('MMM DD, YYYY')}</span>
+        <div className='w-3/4'>
+          <div className='flex flex-row space-x-2 items-center'>
+            <img className='w-6 justify-self-end bg-black' src="/calendar.svg" alt="calendar-icon"/>
+            <span className="text-gray-500 font-medium 2xl:text-base xl:text-sm lg:text-base md:text-sm">{moment(post.createdAt).format('MMM DD, YYYY')}</span>
           </div>
-          <h2 className='2xl:text-2xl xl:text-xl tracking-tight font-extrabold text-justify text-gray-800 2xl:mt-4 xl:mt-3'>{post.excerpt}</h2>
-          <div className='2xl:my-10 xl:my-8 2xl:text-base xl:text-base tracking-tight font-medium text-justify text-gray-800'>
+          <h2 className='2xl:text-2xl xl:text-xl lg:text-2xl md:text-xl tracking-tight font-extrabold text-justify text-gray-800 2xl:mt-4 xl:mt-3 lg:mt-4 md:mt-3'>{post.excerpt}</h2>
+          <div className='2xl:my-10 xl:my-8 lg:my-10 md:my-8 text-base tracking-tight font-medium text-justify text-gray-800'>
             {
               post.content.raw.children.map((typeObj, index) => {
                 const children = typeObj.children.map((item, itemindex) => getContentFragment(itemindex, item.text ? item.text : item.title, item));

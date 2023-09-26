@@ -4,7 +4,7 @@ import { FooterForm } from '.';
 
 const footerDesktop = () => {
   return (
-    <div className="w-full grid 2xl:grid-cols-3 xl:grid-cols-3 justify-items-center 2xl:pt-5 xl:pt-4 lg:mt-5 2xl:px-10 xl:px-8 lg:px-10 bg-white">
+    <div className="w-full grid 2xl:grid-cols-3 xl:grid-cols-3 justify-items-center 2xl:pt-5 xl:pt-4 lg:mt-5 2xl:px-10 xl:px-8 lg:px-10 bg-gradient-to-t from-blue-700 from-10% to-white to-90%">
         <section className=''>
             <FooterForm/>
         </section>

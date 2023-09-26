@@ -18,9 +18,9 @@ const NavMobile = () => {
     return (
     <nav className="grid grid-cols-12 bg-white">
       <Link className="text-center col-span-4" href={`/`}>
-        <div className="flex flex-row items-center 2xl:ml-10 xl:ml-8 lg:ml-8 2xl:my-6 xl:my-5 lg:my-5 text-black">
-          <img className="2xl:w-10 xl:w-8 lg:w-10 2xl:mr-3 xl:mr-2 lg:mr-2" src='/logo.png' alt="logo"/>
-            <span className="text-left text-black 2xl:text-2xl xl:text-xl lg:text-xl font-bold">
+        <div className="flex flex-row items-center 2xl:ml-10 xl:ml-8 lg:ml-8 md:ml-6 sm:ml-4 2xl:my-6 xl:my-5 lg:my-5 md:my-3 sm:my-2 text-black">
+          <img className="2xl:w-10 xl:w-8 lg:w-10 md:w-10 sm:w-10 2xl:mr-3 xl:mr-2 lg:mr-2 md:mr-2 sm:mr-2" src='/logo.png' alt="logo"/>
+            <span className="text-left text-black 2xl:text-2xl xl:text-xl lg:text-xl md:text-base sm:text-xs font-bold">
               Michał Piotrkowski
             </span>
         </div>
@@ -38,7 +38,7 @@ const NavMobile = () => {
             <ul className="flex flex-col items-center">
                 {categories.map((category) => (
                     <Link className='col-span-1' key={category.slug} href={`/category/${category.slug}`}>
-                        <li className={`flex flex-col justify-center text-center 2xl:text-base xl:text-sm cursor-pointer ${router.query.slug === category.slug ? 'bg-pink-700 text-white hover:text-gray-200' : 'bg-white text-gray-400 hover:text-pink-700'}`}>{category.name}</li>
+                        <li className={`flex flex-col justify-center text-center 2xl:text-base xl:text-sm lg:text-sm md:text-sm sm:text-sm cursor-pointer ${router.query.slug === category.slug ? 'bg-pink-700 text-white hover:text-gray-200' : 'bg-white text-gray-400 hover:text-pink-700'}`}>{category.name}</li>
                     </Link>
                 ))}
             </ul>
